@@ -16,7 +16,7 @@ async def on_ready():
         messages = {}
         json_data = json.load(json_file)
         for comm in json_data["commands"]:
-            messages[str(comm["evoker"])] = str(comm["response"])
+            messages[str(comm["evoker"])] = [str(comm["response"]["message"]), str(comm["response"]["image"])]
     
     print(f'{client.user} has connected to Discord!')
     
@@ -31,10 +31,20 @@ async def on_message(message):
 
     if start=="!clazbot":
         #Add, update messages in here, help etc
-        await message.channel.send('Heh-low lez')
+        if message_parts[1].lower()=="help":
+            await message.channel.send("Commands: " + str(messages.keys()))
+        else:
+            await message.channel.send('Heh-low lez')
     
     if start in messages:
-        await message.channel.send(messages[start])
+        text = messages[start][0]
+        img_path = messages[start][1]
+        
+        print("Message: ", text)
+        print("image: ", img_path)
+        embed = discord.Embed()
+        embed.set_image(url=img_path)
+        await message.channel.send(text, embed=embed)
        
     print(messages.keys())
 

@@ -1,6 +1,8 @@
 {
     "commands": [
-        {"evoker": "!claz", "response": "Ahow!"},
-        {"evoker": "!ophens", "response": "First thing im gunna do with this money is feed all the cold hungry ophens!"}
+        {"evoker": "!claz", "response": {"message": "Ahow!", "image": "https://thumbs.gfycat.com/SentimentalZestyApe-size_restricted.gif"}},
+        {"evoker": "!ophens", "response": {"message": "First thing im gunna do with this money is feed all the cold hungry ophens!", "image": "https://thumbs.gfycat.com/AntiqueAshamedArgali-max-1mb.gif"}},
+        {"evoker": "!yays", "response": {"message": "OOOOH YAAYYS", "image":"https://cdn.mee6.xyz/guild-images/810246635023237140/a7d28f2c1a75319ee0a1765df1df46cfd6392da0f09ccd6654e363e26687a16f.gif"}},
+        {"evoker": "!research", "response": {"message": "TAKE YA FUCKEN RESEARCH WITH YA", "image": "https://cdn.mee6.xyz/guild-images/810246635023237140/762577fcfe2de18768abe1401ab16c8b3f539a73b64ab6e3b2499b4497eae767.gif"}}
     ]
 }
