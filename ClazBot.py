@@ -96,9 +96,6 @@ async def on_message(message):
             result = parse_add_update(message_parts, True)
             
             await message.channel.send("Updated '" + command + "'.")
-        elif second_part=="dump":
-            save_messages()
-            await message.channel.send("Dumped to sample.json")
         else:
             await message.channel.send('Heh-low lez')
     
