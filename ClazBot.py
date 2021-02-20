@@ -5,23 +5,14 @@ import shlex
 import discord
 
 is_prod = os.environ.get('IS_HEROKU', None)
-TOKEN = None
-
-if is_prod:
-    TOKEN = os.environ.get("DISCORD_TOKEN")
-else:
-    from dotenv import load_dotenv
-    load_dotenv()
-    TOKEN = os.getenv("DISCORD_TOKEN")
+TOKEN = os.environ.get("DISCORD_TOKEN")
 
 # if is_prod:
-#     TOKEN = os.environ.get('DISCORD_TOKEN')
+#     TOKEN = os.environ.get("DISCORD_TOKEN")
 # else:
 #     from dotenv import load_dotenv
 #     load_dotenv()
 #     TOKEN = os.getenv("DISCORD_TOKEN")
-
-
 
 client = discord.Client()
 
