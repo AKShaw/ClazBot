@@ -1,1 +1,1 @@
-worker: python Clazbot.py
+worker: python ClazBot.py
