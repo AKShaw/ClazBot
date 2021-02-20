@@ -6,7 +6,7 @@ import discord
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = os.environ('DISCORD_TOKEN')
 
 client = discord.Client()
 
@@ -18,6 +18,7 @@ def get_commands_string():
         
     string += "\n\t!clazbot add <command> <reply> <image> \t <command> doesn't need a !. <reply> must be in quotes. <image> is optional but must be a URL if provided."
     string += "\n\t!clazbot update <command> <reply> <image> \t Same as !clazbot add."
+    string += "\n\t!clazbot delete <command> \t Delete the command."
     return string
 
 
