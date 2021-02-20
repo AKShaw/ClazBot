@@ -3,10 +3,17 @@ import json
 import shlex
 
 import discord
-#from dotenv import load_dotenv
-#load_dotenv()
 
-TOKEN = os.environ('DISCORD_TOKEN')
+is_prod = os.environ.get('IS_HEROKU', None)
+
+if is_prod:
+    global TOKEN = os.environ.get('DISCORD_TOKEN')
+else:
+    from dotenv import load_dotenv
+    load_dotenv()
+    global TOKEN = os.getenv("DISCORD_TOKEN")
+
+
 
 client = discord.Client()
 
