@@ -3,9 +3,9 @@ import json
 import shlex
 
 import discord
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
+#load_dotenv()
 
-load_dotenv()
 TOKEN = os.environ('DISCORD_TOKEN')
 
 client = discord.Client()
