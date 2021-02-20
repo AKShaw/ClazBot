@@ -96,6 +96,16 @@ async def on_message(message):
             result = parse_add_update(message_parts, True)
             
             await message.channel.send("Updated '" + command + "'.")
+        elif second_part=="delete":
+            to_delete = "!"+message_parts[2]
+            result = messages.pop(to_delete, None)
+            save_messages()
+
+            if result is not None:
+                print("Deleted ", to_delete)
+                await message.channel.send(to_delete + " has been successfully deleted.")
+            else:
+                await message.channel.send(to_delete + " does not exist.")
         else:
             await message.channel.send('Heh-low lez')
     
